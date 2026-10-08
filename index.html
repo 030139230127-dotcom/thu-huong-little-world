@@ -1,1438 +1,400 @@
 <!DOCTYPE html>
 <html lang="vi">
-
 <head>
-    <meta charset="UTF-8">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Góc nhỏ của Thu Hương — personal digital room cute, mood tracker, diary, music, memory jar, future letter và nhiều mini game.">
+  <title>Thu Hương's Little World ♡</title>
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
-
-    <title>Góc nhỏ của Thu Hương ♡</title>
-
-    <!-- GOOGLE FONTS -->
-    <link rel="preconnect"
-          href="https://fonts.googleapis.com">
-
-    <link rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossorigin>
-
-    <link
-        href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Playwrite+VN:wght@100..400&display=swap"
-        rel="stylesheet"
-    >
-
-    <link rel="stylesheet"
-          href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Be+Vietnam+Pro:wght@400;500;600;700&family=Playwrite+VN:wght@100..400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
+<body data-theme="cherry" data-weather="none" data-cursor="sparkle">
+  <div id="fxLayer" class="fx-layer" aria-hidden="true"></div>
+  <div class="bg-blob blob-1"></div>
+  <div class="bg-blob blob-2"></div>
+  <div class="bg-blob blob-3"></div>
 
-
-<body>
-
-
-    <!-- ======================================
-         BACKGROUND DECOR
-    ======================================= -->
-
-    <div class="background-grid"></div>
-
-    <div class="floating-symbol symbol-one">
-        ♡
+  <header class="topbar">
+    <a href="#home" class="brand" id="brandEgg">TH<span>♡</span></a>
+    <nav class="nav" id="navMenu">
+      <a href="#home">Trang chủ</a>
+      <a href="#dashboard">My World</a>
+      <a href="#journal">Nhật ký</a>
+      <a href="#memories">Kỷ niệm</a>
+      <a href="#garden">Khu vườn</a>
+    </nav>
+    <div class="top-actions">
+      <div class="points-pill">♡ <strong id="pointsTop">0</strong></div>
+      <button class="icon-btn" id="controlBtn" title="Control Center">⚙</button>
+      <button class="menu-btn" id="menuBtn" aria-label="Mở menu">☰</button>
     </div>
-
-    <div class="floating-symbol symbol-two">
-        ✦
-    </div>
-
-    <div class="floating-symbol symbol-three">
-        ୨୧
-    </div>
-
-    <div class="floating-symbol symbol-four">
-        ✿
-    </div>
-
-
-
-    <!-- ======================================
-         NAVBAR
-    ======================================= -->
-
-    <header class="navbar">
-
-        <a href="#home"
-           class="logo">
-
-            TH<span>♡</span>
-
-        </a>
-
-
-        <nav class="nav-links">
-
-            <a href="#home">
-                Trang chủ
-            </a>
-
-            <a href="#about">
-                Về mình
-            </a>
-
-            <a href="#favorites">
-                Yêu thích
-            </a>
-
-            <a href="#memories">
-                Kỷ niệm
-            </a>
-
-        </nav>
-
-
-        <button class="nav-special"
-                id="openLetter">
-
-            Mở thư cho bạn 💌
-
-        </button>
-
-    </header>
-
-
-
-    <!-- ======================================
-         HERO
-    ======================================= -->
-
-    <main>
-
-        <section class="hero"
-                 id="home">
-
-
-            <!-- LEFT -->
-
-            <div class="hero-left reveal">
-
-
-                <div class="hero-badge">
-
-                    <span>୨୧</span>
-
-                    CHÀO MỪNG ĐẾN GÓC NHỎ CỦA MÌNH
-
-                </div>
-
-
-                <p class="hero-kicker">
-
-                    PERSONAL DIARY · EST. 2026
-
-                </p>
-
-
-                <h1>
-
-                    Một chút
-
-                    <span class="pink-word">
-                        dễ thương,
-                    </span>
-
-                    <br>
-
-                    một chút
-
-                    <span class="script-word">
-                        mộng mơ ♡
-                    </span>
-
-                </h1>
-
-
-                <p class="hero-description">
-
-                    Hi, mình là <b>Thu Hương</b>.
-
-                    Đây là một góc nhỏ để mình lưu lại
-                    những điều mình thích, những ngày đáng nhớ,
-                    những cảm xúc vụn vặt và cả những giấc mơ
-                    chưa kể với ai.
-
-                </p>
-
-
-                <div class="hero-actions">
-
-                    <a href="#about"
-                       class="primary-button">
-
-                        Khám phá thế giới của mình
-
-                        <span>♡</span>
-
-                    </a>
-
-
-                    <a href="#memories"
-                       class="secondary-button">
-
-                        Xem kỷ niệm
-
-                        <span>↗</span>
-
-                    </a>
-
-                </div>
-
-
-
-                <!-- MOOD MINI CARD -->
-
-                <div class="mini-status-card">
-
-                    <span class="status-light"></span>
-
-                    <div>
-
-                        <small>
-                            TÂM TRẠNG HÔM NAY
-                        </small>
-
-                        <p id="heroMood">
-                            đang sống một ngày thật xinh ✿
-                        </p>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-
-            <!-- RIGHT -->
-
-            <div class="hero-right reveal">
-
-
-                <div class="hero-circle"></div>
-
-                <div class="hero-circle-outline"></div>
-
-
-
-                <!-- MAIN PHOTO CARD -->
-
-                <div class="main-photo-card">
-
-
-                    <div class="tape tape-one"></div>
-
-                    <div class="tape tape-two"></div>
-
-
-                    <div class="fake-photo">
-
-                        <span class="photo-monogram">
-                            TH
-                        </span>
-
-                        <p>
-                            your favourite photo
-                        </p>
-
-                    </div>
-
-
-                    <div class="photo-caption">
-
-                        <span>
-                            01
-                        </span>
-
-                        <p>
-                            Một ngày bình thường,
-                            nhưng mình thích ♡
-                        </p>
-
-                    </div>
-
-                </div>
-
-
-
-                <!-- STICKERS -->
-
-                <div class="round-sticker">
-
-                    LOVE
-                    <br>
-                    THIS
-                    <br>
-                    ♡
-
-                </div>
-
-
-                <div class="bow-sticker">
-
-                    ୨୧
-
-                </div>
-
-
-
-                <!-- NOTE -->
-
-                <div class="floating-note">
-
-                    <small>
-                        NOTE TO SELF
-                    </small>
-
-                    <p>
-                        “Đừng quên tận hưởng
-                        những điều nhỏ xíu.”
-                    </p>
-
-                    <span>
-                        ♡
-                    </span>
-
-                </div>
-
-
-
-                <!-- MINI PLAYER -->
-
-                <div class="mini-player">
-
-                    <button id="miniPlayButton"
-                            class="mini-play-button">
-
-                        ▶
-
-                    </button>
-
-                    <div class="mini-player-info">
-
-                        <small>
-                            ĐANG PHÁT
-                        </small>
-
-                        <p>
-                            bài hát mình thích
-                        </p>
-
-                        <div class="mini-progress">
-
-                            <div id="miniProgressBar"></div>
-
-                        </div>
-
-                    </div>
-
-                    <span class="music-note">
-                        ♪
-                    </span>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- ======================================
-             MOVING TEXT
-        ======================================= -->
-
-        <section class="marquee">
-
-            <div class="marquee-track">
-
-                <span>
-                    GÓC NHỎ CỦA MÌNH
-                </span>
-
-                <b>♡</b>
-
-                <span>
-                    NHỮNG NGÀY XINH
-                </span>
-
-                <b>✦</b>
-
-                <span>
-                    CHUYỆN NHỎ XÍU
-                </span>
-
-                <b>୨୧</b>
-
-                <span>
-                    GIẤC MƠ LỚN
-                </span>
-
-                <b>✿</b>
-
-                <span>
-                    GÓC NHỎ CỦA MÌNH
-                </span>
-
-                <b>♡</b>
-
-                <span>
-                    NHỮNG NGÀY XINH
-                </span>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- ======================================
-             ABOUT
-        ======================================= -->
-
-        <section class="section about-section"
-                 id="about">
-
-
-            <div class="section-header reveal">
-
-                <div>
-
-                    <p class="section-number">
-                        01 · VỀ MÌNH
-                    </p>
-
-                    <h2>
-
-                        Một chút về
-
-                        <span>
-                            Thu Hương.
-                        </span>
-
-                    </h2>
-
-                </div>
-
-
-                <p class="section-intro">
-
-                    Không cần phải quá đặc biệt.
-                    Chỉ cần là những điều làm mình vui
-                    và khiến mình muốn nhớ thật lâu.
-
-                </p>
-
-            </div>
-
-
-
-            <div class="about-layout">
-
-
-                <!-- LARGE PROFILE -->
-
-                <article class="profile-story-card reveal">
-
-                    <div class="card-top">
-
-                        <span class="tiny-label">
-                            LITTLE PROFILE
-                        </span>
-
-                        <span>
-                            ♡
-                        </span>
-
-                    </div>
-
-
-                    <h3>
-
-                        Xin chào,
-
-                        <br>
-
-                        mình là
-                        <i>Thu Hương.</i>
-
-                    </h3>
-
-
-                    <p>
-
-                        Một người thích những thứ xinh xắn,
-                        thích lưu lại những khoảnh khắc nhỏ,
-                        thích sự nhẹ nhàng nhưng đôi khi
-                        cũng hơi hỗn loạn một chút.
-
-                    </p>
-
-
-                    <div class="signature">
-
-                        Thu Hương
-
-                    </div>
-
-                </article>
-
-
-
-                <!-- FACT CARD -->
-
-                <article class="fact-card reveal">
-
-                    <p class="tiny-label">
-                        MY LITTLE FACTS
-                    </p>
-
-
-                    <div class="fact-row">
-
-                        <span>
-                            01
-                        </span>
-
-                        <div>
-
-                            <small>
-                                TÍNH CÁCH
-                            </small>
-
-                            <p>
-                                Mộng mơ & hơi cầu toàn
-                            </p>
-
-                        </div>
-
-                    </div>
-
-
-                    <div class="fact-row">
-
-                        <span>
-                            02
-                        </span>
-
-                        <div>
-
-                            <small>
-                                MÌNH THÍCH
-                            </small>
-
-                            <p>
-                                Đồ xinh, âm nhạc, ảnh đẹp
-                            </p>
-
-                        </div>
-
-                    </div>
-
-
-                    <div class="fact-row">
-
-                        <span>
-                            03
-                        </span>
-
-                        <div>
-
-                            <small>
-                                MOOD
-                            </small>
-
-                            <p>
-                                Dịu dàng nhưng nhiều năng lượng
-                            </p>
-
-                        </div>
-
-                    </div>
-
-
-                    <div class="fact-row">
-
-                        <span>
-                            04
-                        </span>
-
-                        <div>
-
-                            <small>
-                                CHÂM NGÔN
-                            </small>
-
-                            <p>
-                                Làm ngày bình thường trở nên đẹp
-                            </p>
-
-                        </div>
-
-                    </div>
-
-                </article>
-
-
-
-                <!-- QUOTE -->
-
-                <article class="dark-quote-card reveal">
-
-                    <span class="quote-symbol">
-                        “
-                    </span>
-
-                    <p>
-
-                        Mình muốn sống
-
-                        <br>
-
-                        một cuộc đời
-
-                        <br>
-
-                        thật <i>xinh.</i>
-
-                    </p>
-
-                    <span class="quote-heart">
-                        ♡
-                    </span>
-
-                </article>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- ======================================
-             TODAY CORNER
-        ======================================= -->
-
-        <section class="section today-section">
-
-
-            <div class="section-header reveal">
-
-                <div>
-
-                    <p class="section-number">
-                        02 · GÓC HÔM NAY
-                    </p>
-
-                    <h2>
-
-                        Hôm nay bạn
-
-                        <span>
-                            thế nào?
-                        </span>
-
-                    </h2>
-
-                </div>
-
-
-                <p class="section-intro">
-
-                    Chọn một tâm trạng,
-                    nhận một lời nhắn nhỏ
-                    hoặc thả vài trái tim cho vui.
-
-                </p>
-
-            </div>
-
-
-
-            <div class="today-grid">
-
-
-                <!-- MOOD -->
-
-                <article class="interactive-card mood-card reveal">
-
-                    <div class="interactive-top">
-
-                        <small>
-                            TÂM TRẠNG
-                        </small>
-
-                        <span>
-                            01
-                        </span>
-
-                    </div>
-
-
-                    <h3>
-                        Mood hôm nay
-                    </h3>
-
-
-                    <div class="mood-options">
-
-
-                        <button class="mood-button"
-                                data-mood="Hôm nay mình vui vẻ 🌷">
-
-                            🌷
-
-                            <span>
-                                Vui vẻ
-                            </span>
-
-                        </button>
-
-
-                        <button class="mood-button"
-                                data-mood="Hôm nay mình hơi lười 💤">
-
-                            💤
-
-                            <span>
-                                Hơi lười
-                            </span>
-
-                        </button>
-
-
-                        <button class="mood-button"
-                                data-mood="Hôm nay mình mộng mơ ☁️">
-
-                            ☁️
-
-                            <span>
-                                Mộng mơ
-                            </span>
-
-                        </button>
-
-
-                        <button class="mood-button"
-                                data-mood="Hôm nay mình tràn năng lượng ✦">
-
-                            ✦
-
-                            <span>
-                                Năng lượng
-                            </span>
-
-                        </button>
-
-                    </div>
-
-
-                    <div class="selected-mood">
-
-                        <small>
-                            MOOD ĐÃ CHỌN
-                        </small>
-
-                        <p id="selectedMood">
-                            Chưa chọn nè ୨୧
-                        </p>
-
-                    </div>
-
-                </article>
-
-
-
-                <!-- FORTUNE -->
-
-                <article class="interactive-card fortune-card reveal">
-
-                    <div class="interactive-top">
-
-                        <small>
-                            LỜI NHẮN
-                        </small>
-
-                        <span>
-                            02
-                        </span>
-
-                    </div>
-
-
-                    <div class="mail-icon">
-                        💌
-                    </div>
-
-
-                    <h3>
-
-                        Một lời nhắn
-                        dành riêng cho bạn.
-
-                    </h3>
-
-
-                    <p>
-
-                        Không biết hôm nay
-                        bạn cần nghe điều gì nhỉ?
-
-                    </p>
-
-
-                    <button class="card-button"
-                            id="fortuneButton">
-
-                        Bốc một lời nhắn
-
-                        <span>
-                            ✦
-                        </span>
-
-                    </button>
-
-                </article>
-
-
-
-                <!-- HEART -->
-
-                <article class="interactive-card love-card reveal">
-
-                    <div class="interactive-top">
-
-                        <small>
-                            JUST FOR FUN
-                        </small>
-
-                        <span>
-                            03
-                        </span>
-
-                    </div>
-
-
-                    <div class="giant-heart">
-                        ♡
-                    </div>
-
-
-                    <h3>
-
-                        Thêm một chút
-                        dễ thương?
-
-                    </h3>
-
-
-                    <p>
-
-                        Bấm thử đi,
-                        màn hình sẽ đáng yêu hơn đó.
-
-                    </p>
-
-
-                    <button class="white-button"
-                            id="heartButton">
-
-                        Thả tim đi ♡
-
-                    </button>
-
-                </article>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- ======================================
-             FAVORITES
-        ======================================= -->
-
-        <section class="section favorites-section"
-                 id="favorites">
-
-
-            <div class="section-header reveal">
-
-                <div>
-
-                    <p class="section-number">
-                        03 · ĐIỀU MÌNH THÍCH
-                    </p>
-
-                    <h2>
-
-                        Những thứ làm mình
-
-                        <span>
-                            vui hơn.
-                        </span>
-
-                    </h2>
-
-                </div>
-
-            </div>
-
-
-
-            <div class="favorites-grid">
-
-
-                <article class="favorite-card favorite-pink reveal">
-
-                    <span class="favorite-count">
-                        01
-                    </span>
-
-                    <div class="favorite-icon">
-                        🎧
-                    </div>
-
-                    <small>
-                        ÂM NHẠC
-                    </small>
-
-                    <h3>
-                        Playlist
-                    </h3>
-
-                    <p>
-
-                        Những bài hát cho
-                        những ngày vui,
-                        ngày buồn và cả ngày chẳng biết mình đang sao.
-
-                    </p>
-
-                    <button class="favorite-link"
-                            data-message="Playlist của mình vẫn đang được hoàn thiện ♡">
-
-                        Mở playlist ↗
-
-                    </button>
-
-                </article>
-
-
-
-                <article class="favorite-card favorite-blue reveal">
-
-                    <span class="favorite-count">
-                        02
-                    </span>
-
-                    <div class="favorite-icon">
-                        🎀
-                    </div>
-
-                    <small>
-                        OBSESSION
-                    </small>
-
-                    <h3>
-                        Đồ xinh xắn
-                    </h3>
-
-                    <p>
-
-                        Nơ, sticker, đồ pastel,
-                        stationery và những món bé xíu
-                        nhưng khiến mình vui.
-
-                    </p>
-
-                    <button class="favorite-link"
-                            data-message="Có quá nhiều thứ xinh để chọn luôn ୨୧">
-
-                        Xem thêm ↗
-
-                    </button>
-
-                </article>
-
-
-
-                <article class="favorite-card favorite-yellow reveal">
-
-                    <span class="favorite-count">
-                        03
-                    </span>
-
-                    <div class="favorite-icon">
-                        ☕
-                    </div>
-
-                    <small>
-                        LITTLE JOYS
-                    </small>
-
-                    <h3>
-                        Những ngày chậm
-                    </h3>
-
-                    <p>
-
-                        Một ly nước ngon,
-                        một buổi chiều yên,
-                        vài cuộc trò chuyện dài
-                        và không cần vội.
-
-                    </p>
-
-                    <button class="favorite-link"
-                            data-message="Một ngày chậm đôi khi lại là ngày mình cần nhất ☕">
-
-                        Mood này ↗
-
-                    </button>
-
-                </article>
-
-
-
-                <article class="favorite-card favorite-cherry reveal">
-
-                    <span class="favorite-count">
-                        04
-                    </span>
-
-                    <div class="favorite-icon">
-                        📷
-                    </div>
-
-                    <small>
-                        MEMORIES
-                    </small>
-
-                    <h3>
-                        Chụp lại mọi thứ
-                    </h3>
-
-                    <p>
-
-                        Vì có những khoảnh khắc
-                        chỉ diễn ra một lần
-                        nhưng mình muốn nhớ thật lâu.
-
-                    </p>
-
-                    <button class="favorite-link"
-                            data-message="Kỷ niệm đẹp nhất là kỷ niệm mình còn nhớ ♡">
-
-                        Xem gallery ↗
-
-                    </button>
-
-                </article>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- ======================================
-             MEMORIES
-        ======================================= -->
-
-        <section class="memories-section"
-                 id="memories">
-
-
-            <div class="memories-heading reveal">
-
-                <p>
-                    04 · NHỮNG KỶ NIỆM
-                </p>
-
-                <h2>
-
-                    Những ngày nhỏ,
-
-                    <br>
-
-                    <span>
-                        nhớ thật lâu ♡
-                    </span>
-
-                </h2>
-
-            </div>
-
-
-
-            <div class="memory-layout">
-
-
-                <article class="memory-card memory-large reveal">
-
-                    <div class="memory-image pink-memory">
-
-                        <span>
-                            MEMORY
-                            <br>
-                            01
-                        </span>
-
-                    </div>
-
-
-                    <div class="memory-caption">
-
-                        <small>
-                            MỘT NGÀY ĐÁNG NHỚ
-                        </small>
-
-                        <h3>
-                            Một ngày bình thường nhưng thật đẹp.
-                        </h3>
-
-                        <p>
-                            12 · 08 · 2026
-                        </p>
-
-                    </div>
-
-                </article>
-
-
-
-                <article class="memory-card reveal">
-
-                    <div class="memory-image blue-memory">
-
-                        <span>
-                            MEMORY
-                            <br>
-                            02
-                        </span>
-
-                    </div>
-
-
-                    <div class="memory-caption">
-
-                        <small>
-                            LITTLE JOY
-                        </small>
-
-                        <h3>
-                            Những điều bé xíu.
-                        </h3>
-
-                    </div>
-
-                </article>
-
-
-
-                <article class="memory-card reveal">
-
-                    <div class="memory-image yellow-memory">
-
-                        <span>
-                            MEMORY
-                            <br>
-                            03
-                        </span>
-
-                    </div>
-
-
-                    <div class="memory-caption">
-
-                        <small>
-                            SWEET DAY
-                        </small>
-
-                        <h3>
-                            Một chút dịu dàng.
-                        </h3>
-
-                    </div>
-
-                </article>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- ======================================
-             BIG QUOTE
-        ======================================= -->
-
-        <section class="big-quote-section reveal">
-
-            <span class="quote-star">
-                ✦
-            </span>
-
-            <p>
-
-                “Mình đang học cách yêu
-
-                <br>
-
-                những ngày bình thường
-
-                <br>
-
-                của chính mình.”
-
-            </p>
-
-            <small>
-                — THU HƯƠNG ♡
-            </small>
-
-        </section>
-
-    </main>
-
-
-
-    <!-- ======================================
-         FOOTER
-    ======================================= -->
-
-    <footer>
-
-
-        <div class="footer-symbol">
-            ୨୧
-        </div>
-
-
-        <p class="footer-label">
-            ĐỪNG LÀ NGƯỜI LẠ
+  </header>
+
+  <main>
+    <section class="hero section" id="home">
+      <div class="hero-copy reveal">
+        <div class="eyebrow">୨୧ THU HƯƠNG'S DIGITAL ROOM · V4</div>
+        <p class="live-greeting" id="liveGreeting">Chào bạn ♡</p>
+        <h1>Một thế giới nhỏ<br><span>để sống chậm & vui hơn.</span></h1>
+        <p class="lead">
+          Web này không chỉ để nhìn. Bạn có thể nghe nhạc, theo dõi mood, viết nhật ký,
+          trồng hoa, nuôi pet, quay vòng lựa chọn, mở thành tựu và cất những điều riêng tư.
         </p>
+        <div class="hero-actions">
+          <button class="primary-btn" id="quickMusicBtn">▶ Bật nhạc</button>
+          <button class="soft-btn" id="quickFortuneBtn">💌 Bốc lời nhắn</button>
+          <button class="soft-btn" id="quickWeatherBtn">🌸 Đổi hiệu ứng</button>
+        </div>
+        <div class="hero-badges">
+          <span>🔥 <b id="streakHero">0</b> ngày streak</span>
+          <span>♡ <b id="pointsHero">0</b> Love Points</span>
+          <span>🏅 <b id="badgeHero">0</b> badges</span>
+        </div>
+      </div>
 
-
-        <h2>
-
-            Ghé chơi
-
-            <span>
-                thường xuyên nhé ♡
-            </span>
-
-        </h2>
-
-
-        <p class="footer-description">
-
-            Bạn có thể tìm thấy mình đâu đó
-            giữa những món đồ xinh,
-            vài bản nhạc hay và những giấc mơ lớn.
-
-        </p>
-
-
-
-        <div class="footer-buttons">
-
-            <button data-social="Instagram">
-                Instagram ↗
-            </button>
-
-            <button data-social="Facebook">
-                Facebook ↗
-            </button>
-
-            <button data-social="TikTok">
-                TikTok ↗
-            </button>
-
+      <div class="hero-collage reveal">
+        <div class="polaroid-card">
+          <div class="tape"></div>
+          <div class="fake-photo"><b>TH</b><small>MY LITTLE WORLD</small></div>
+          <p>“Những điều nhỏ cũng xứng đáng được nhớ.”</p>
         </div>
 
-
-
-        <div class="footer-bottom">
-
-            <span>
-                © 2026 THU HƯƠNG
-            </span>
-
-            <span>
-                MADE WITH ♡
-            </span>
-
+        <div class="mini-clock-card">
+          <small>LOCAL TIME</small>
+          <strong id="miniClock">00:00</strong>
+          <span id="miniDate">...</span>
         </div>
 
-    </footer>
-
-
-
-    <!-- ======================================
-         FLOATING BUTTONS
-    ======================================= -->
-
-    <div class="floating-buttons">
-
-        <button id="themeButton"
-                title="Đổi màu">
-
-            🎨
-
-        </button>
-
-        <button id="topButton"
-                title="Lên đầu trang">
-
-            ↑
-
-        </button>
-
-    </div>
-
-
-
-    <!-- ======================================
-         LETTER MODAL
-    ======================================= -->
-
-    <div class="modal-overlay"
-         id="letterModal">
-
-
-        <div class="letter-paper">
-
-            <button class="modal-close"
-                    id="closeLetter">
-
-                ×
-
-            </button>
-
-
-            <div class="letter-bow">
-                ୨୧
-            </div>
-
-
-            <p class="letter-label">
-                A LITTLE LETTER
-            </p>
-
-
-            <h3>
-
-                Gửi bạn,
-
-            </h3>
-
-
-            <p>
-
-                Cảm ơn vì đã ghé qua
-                góc nhỏ của mình.
-
-                <br><br>
-
-                Mong rằng hôm nay bạn
-                gặp được một điều thật dễ thương,
-                dù chỉ là rất nhỏ.
-
-                <br><br>
-
-                Và nếu hôm nay không phải
-                một ngày tốt đẹp,
-                thì cũng không sao.
-
-                Ngày mai mình thử lại nhé ♡
-
-            </p>
-
-
-            <div class="letter-signature">
-
-                Thu Hương ୨୧
-
-            </div>
-
+        <div class="mini-music-card">
+          <div class="disc">♫</div>
+          <div>
+            <small>NOW PLAYING</small>
+            <strong id="heroTrack">Cherry Milk</strong>
+            <div class="micro-progress"><i id="heroTrackProgress"></i></div>
+          </div>
+          <button id="heroPlay">▶</button>
         </div>
 
-    </div>
+        <div class="cute-sticker sticker-a">୨୧</div>
+        <div class="cute-sticker sticker-b">✦</div>
+      </div>
+    </section>
 
+    <section class="ticker">
+      <div class="ticker-track">
+        <span>♡ MOOD CALENDAR</span><b>✦</b><span>MEMORY JAR</span><b>୨୧</b>
+        <span>FLOWER GARDEN</span><b>✿</b><span>LOVE POINTS</span><b>♡</b>
+        <span>VIRTUAL PET</span><b>✦</b><span>FUTURE LETTER</span><b>୨୧</b>
+      </div>
+    </section>
 
+    <section class="section dashboard-section" id="dashboard">
+      <div class="section-title reveal">
+        <span>01 · MY WORLD</span>
+        <h2>Control your <em>little universe.</em></h2>
+        <p>Tất cả widget bên dưới đều chạy trực tiếp trên trình duyệt và tự lưu bằng localStorage.</p>
+      </div>
 
-    <!-- ======================================
-         FORTUNE MODAL
-    ======================================= -->
+      <div class="dashboard-grid">
+        <article class="dash-card points-card reveal">
+          <div class="card-head"><small>LOVE POINTS</small><span>♡</span></div>
+          <div class="big-number" id="pointsBig">0</div>
+          <p>Hoàn thành to-do, viết nhật ký, focus và chăm pet để nhận điểm.</p>
+          <button class="tiny-btn" id="shopBtn">Mở Unlock Shop 🎁</button>
+        </article>
 
-    <div class="modal-overlay"
-         id="fortuneModal">
+        <article class="dash-card stats-card reveal">
+          <div class="card-head"><small>PERSONAL STATS</small><span>📊</span></div>
+          <div class="stats-grid">
+            <div><b id="statDiary">0</b><span>nhật ký</span></div>
+            <div><b id="statTodo">0</b><span>việc xong</span></div>
+            <div><b id="statFocus">0</b><span>focus</span></div>
+            <div><b id="statMood">—</b><span>mood top</span></div>
+          </div>
+        </article>
 
+        <article class="dash-card achievement-card reveal">
+          <div class="card-head"><small>ACHIEVEMENTS</small><span>🏅</span></div>
+          <div id="achievementPreview" class="achievement-preview empty-state">Chưa mở badge nào.</div>
+          <button class="tiny-btn" id="allBadgesBtn">Xem tất cả badges</button>
+        </article>
 
-        <div class="fortune-paper">
+        <article class="dash-card pet-card reveal">
+          <div class="card-head"><small>VIRTUAL PET</small><span id="petMoodIcon">♡</span></div>
+          <div class="pet-face" id="petFace">૮ ˶ᵔ ᵕ ᵔ˶ ა</div>
+          <h3 id="petName">Mochi</h3>
+          <div class="pet-bars">
+            <label>Đói <i><b id="hungerBar"></b></i></label>
+            <label>Vui <i><b id="happyBar"></b></i></label>
+          </div>
+          <div class="pet-actions">
+            <button data-pet="feed">🍓 Cho ăn</button>
+            <button data-pet="pet">♡ Vuốt ve</button>
+            <button data-pet="sleep">🌙 Cho ngủ</button>
+          </div>
+        </article>
+      </div>
+    </section>
 
+    <section class="section music-section soft-bg" id="music">
+      <div class="section-title reveal">
+        <span>02 · MUSIC ROOM</span>
+        <h2>Playlist <em>không cần MP3.</em></h2>
+        <p>Nhạc được tạo bằng Web Audio API nên có thể chạy ngay trên GitHub Pages và không cần file nhạc ngoài.</p>
+      </div>
 
-            <button class="modal-close"
-                    id="closeFortune">
-
-                ×
-
-            </button>
-
-
-            <span class="fortune-decoration">
-                ✦
-            </span>
-
-
-            <small>
-                LỜI NHẮN DÀNH CHO BẠN
-            </small>
-
-
-            <p id="fortuneText">
-
-                Hôm nay sẽ là
-                một ngày thật xinh ♡
-
-            </p>
-
-
-            <button id="newFortune"
-                    class="fortune-new-button">
-
-                Bốc câu khác ୨୧
-
-            </button>
-
+      <div class="music-player reveal">
+        <div class="album-art" id="albumArt">♫</div>
+        <div class="music-info">
+          <small>NOW PLAYING</small>
+          <h3 id="trackName">Cherry Milk</h3>
+          <p id="trackMood">sweet · warm · cute</p>
+          <div class="progress-row"><span id="musicTime">00:00</span><div class="progress"><i id="musicProgress"></i></div><span>01:00</span></div>
         </div>
+        <div class="music-controls">
+          <button id="prevTrack">⏮</button>
+          <button class="main-play" id="mainPlay">▶</button>
+          <button id="nextTrack">⏭</button>
+        </div>
+        <div class="music-tools">
+          <label>🔉 <input id="volume" type="range" min="0" max="100" value="40"></label>
+          <button id="shuffleBtn">🔀</button>
+          <button id="repeatBtn">↻</button>
+        </div>
+        <div class="visualizer" id="visualizer"></div>
+      </div>
+    </section>
 
+    <section class="section" id="mood">
+      <div class="section-title reveal">
+        <span>03 · MOOD CALENDAR</span>
+        <h2>Cảm xúc của mình <em>theo từng ngày.</em></h2>
+      </div>
+      <div class="two-col">
+        <article class="panel reveal">
+          <div class="card-head"><small>CHỌN MOOD HÔM NAY</small><span>☁️</span></div>
+          <div class="mood-options">
+            <button data-mood="🌷">🌷<span>Vui</span></button>
+            <button data-mood="☁️">☁️<span>Mơ</span></button>
+            <button data-mood="💤">💤<span>Lười</span></button>
+            <button data-mood="✦">✦<span>Năng lượng</span></button>
+            <button data-mood="🥹">🥹<span>Mệt</span></button>
+            <button data-mood="💗">💗<span>Ấm áp</span></button>
+          </div>
+          <p class="selected-line">Mood hôm nay: <b id="todayMood">chưa chọn</b></p>
+        </article>
+
+        <article class="panel reveal">
+          <div class="calendar-head">
+            <button id="prevMonth">‹</button>
+            <h3 id="calendarTitle">Tháng</h3>
+            <button id="nextMonth">›</button>
+          </div>
+          <div class="calendar-week"><span>T2</span><span>T3</span><span>T4</span><span>T5</span><span>T6</span><span>T7</span><span>CN</span></div>
+          <div class="mood-calendar" id="moodCalendar"></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section soft-bg" id="memories">
+      <div class="section-title reveal">
+        <span>04 · MEMORY JAR</span>
+        <h2>Cất một điều vui <em>vào chiếc lọ.</em></h2>
+      </div>
+      <div class="memory-layout">
+        <article class="panel reveal">
+          <div class="jar-visual"><div class="jar-lid"></div><div id="jarHearts" class="jar-hearts"></div></div>
+          <textarea id="memoryInput" rows="4" maxlength="220" placeholder="Ví dụ: Hôm nay ăn được món mình thích... ♡"></textarea>
+          <div class="row-actions">
+            <button class="primary-btn small" id="saveMemoryBtn">Bỏ vào lọ ♡</button>
+            <button class="soft-btn small" id="randomMemoryBtn">Lấy một kỷ niệm</button>
+          </div>
+        </article>
+        <article class="memory-display reveal">
+          <small>RANDOM MEMORY</small>
+          <div class="memory-paper" id="memoryPaper">Chiếc lọ vẫn đang chờ những điều vui.</div>
+          <p><b id="memoryCount">0</b> kỷ niệm đang được cất giữ.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="journal">
+      <div class="section-title reveal">
+        <span>05 · DIARY + FUTURE LETTER</span>
+        <h2>Viết cho hôm nay, <em>gửi cho tương lai.</em></h2>
+      </div>
+
+      <div class="diary-grid">
+        <article class="panel reveal">
+          <div class="card-head"><small>MINI DIARY</small><span>✎</span></div>
+          <input id="diaryTitle" maxlength="60" placeholder="Tiêu đề nhỏ...">
+          <textarea id="diaryText" rows="7" maxlength="1200" placeholder="Hôm nay mình muốn viết..."></textarea>
+          <div class="row-actions">
+            <select id="diaryMood"><option>🌷</option><option>☁️</option><option>💤</option><option>🥹</option><option>💗</option></select>
+            <span class="char-count" id="diaryChar">0/1200</span>
+            <button class="primary-btn small" id="saveDiaryBtn">Lưu nhật ký ♡</button>
+          </div>
+        </article>
+
+        <article class="panel reveal">
+          <div class="card-head"><small>RECENT ENTRIES</small><button class="text-btn" id="clearDiaryBtn">Xóa hết</button></div>
+          <div id="diaryList" class="stack-list empty-state">Chưa có nhật ký.</div>
+        </article>
+
+        <article class="future-letter-card reveal">
+          <small>LETTER TO FUTURE ME</small>
+          <h3>Khóa một lá thư đến ngày bạn chọn.</h3>
+          <textarea id="futureLetterText" rows="5" maxlength="1000" placeholder="Gửi mình của tương lai..."></textarea>
+          <input id="futureLetterDate" type="date">
+          <button class="soft-btn" id="saveFutureLetterBtn">Niêm phong thư 💌</button>
+          <div id="futureLetterStatus" class="future-status">Chưa có thư nào đang chờ.</div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section soft-bg" id="todo">
+      <div class="section-title reveal">
+        <span>06 · TODO + FOCUS</span>
+        <h2>Những việc nhỏ, <em>những bước tiến nhỏ.</em></h2>
+      </div>
+      <div class="todo-grid">
+        <article class="panel reveal">
+          <div class="todo-add"><input id="todoInput" maxlength="100" placeholder="Thêm một việc nhỏ..."><button class="primary-btn small" id="addTodoBtn">Thêm</button></div>
+          <div class="todo-meta"><span id="todoMeta">0 việc</span><button class="text-btn" id="clearDoneBtn">Xóa việc xong</button></div>
+          <div id="todoList" class="todo-list empty-state">Chưa có việc nào.</div>
+        </article>
+
+        <article class="focus-card reveal">
+          <small>POMODORO</small>
+          <h3 id="focusClock">25:00</h3>
+          <p id="focusLabel">Một phiên tập trung ngắn.</p>
+          <div class="preset-row"><button data-focus="1500">25/5</button><button data-focus="3000">50/10</button><button data-focus="600">10 phút</button></div>
+          <div class="focus-actions"><button id="focusStart">▶ Bắt đầu</button><button id="focusReset">↺</button></div>
+          <p class="focus-count">Hôm nay: <b id="focusToday">0</b> phiên</p>
+        </article>
+
+        <article class="sticky-workspace reveal">
+          <div class="card-head"><small>STICKY NOTES</small><button class="text-btn" id="addStickyBtn">+ Note</button></div>
+          <div id="stickyArea" class="sticky-area"></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="fun">
+      <div class="section-title reveal">
+        <span>07 · RANDOM CORNER</span>
+        <h2>Khi không biết chọn gì, <em>để web chọn hộ.</em></h2>
+      </div>
+      <div class="fun-grid">
+        <article class="random-card reveal">
+          <small>RANDOM ME</small>
+          <div class="random-result" id="randomResult">Hôm nay làm gì nhỉ?</div>
+          <div class="random-buttons">
+            <button data-random="activity">Làm gì?</button>
+            <button data-random="food">Ăn gì?</button>
+            <button data-random="challenge">Thử thách</button>
+            <button data-random="fortune">Lời nhắn</button>
+          </div>
+        </article>
+
+        <article class="wheel-card reveal">
+          <small>WHEEL OF CHOICE</small>
+          <textarea id="wheelOptions" rows="4" placeholder="Nhập các lựa chọn, mỗi dòng một option...">Cà phê\nĐi dạo\nXem phim\nNgủ một giấc</textarea>
+          <div class="wheel-wrap"><div class="wheel" id="wheel">✦</div><div class="wheel-arrow">▼</div></div>
+          <button class="primary-btn small" id="spinWheelBtn">Quay vòng 🎡</button>
+          <p id="wheelResult">Kết quả sẽ hiện ở đây.</p>
+        </article>
+
+        <article class="tarot-card reveal">
+          <small>CUTE FORTUNE CARD</small>
+          <div class="card-back" id="fortuneCardVisual">?</div>
+          <h3 id="fortuneCardTitle">Mystery Card</h3>
+          <p id="fortuneCardText">Bốc một lá để xem lời nhắn hôm nay.</p>
+          <button class="soft-btn" id="drawCardBtn">Bốc bài ✦</button>
+        </article>
+      </div>
+    </section>
+
+    <section class="section soft-bg" id="garden">
+      <div class="section-title reveal">
+        <span>08 · FLOWER GARDEN</span>
+        <h2>Mỗi việc hoàn thành, <em>một bông hoa nở.</em></h2>
+      </div>
+      <div class="garden-shell reveal">
+        <div class="garden-toolbar">
+          <div><b id="flowerCount">0</b><span> bông hoa đã trồng</span></div>
+          <button class="soft-btn small" id="gardenGiftBtn">Nhận hạt giống hôm nay 🌱</button>
+        </div>
+        <div class="garden" id="garden"></div>
+      </div>
+    </section>
+
+    <section class="section" id="guestbook">
+      <div class="section-title reveal">
+        <span>09 · GUESTBOOK</span>
+        <h2>Để lại một lời nhắn <em>cho góc nhỏ này.</em></h2>
+        <p>Bản hiện tại lưu lời nhắn trên chính thiết bị đang mở web. Muốn mọi người cùng thấy lời nhắn của nhau, bước sau sẽ nối Supabase/Firebase.</p>
+      </div>
+      <div class="guest-grid">
+        <article class="panel reveal">
+          <input id="guestName" maxlength="30" placeholder="Tên của bạn">
+          <textarea id="guestMessage" rows="5" maxlength="300" placeholder="Viết một lời nhắn dễ thương..."></textarea>
+          <button class="primary-btn small" id="guestSubmit">Ký tên ♡</button>
+        </article>
+        <article class="panel reveal">
+          <div class="card-head"><small>LOCAL GUESTBOOK</small><button class="text-btn" id="clearGuestbook">Xóa</button></div>
+          <div id="guestList" class="stack-list empty-state">Chưa có lời nhắn.</div>
+        </article>
+      </div>
+    </section>
+
+    <section class="quote-section reveal">
+      <span>✦</span>
+      <p>“Mỗi ngày mình thêm một chút gì đó<br>để thế giới nhỏ này giống mình hơn.”</p>
+      <small>— THU HƯƠNG ♡</small>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-symbol">୨୧</div>
+    <small>YOU REACHED THE END</small>
+    <h2>Cảm ơn vì đã <em>ghé chơi ♡</em></h2>
+    <p>Bạn còn có thể tìm Easter Egg bằng cách bấm logo TH♡ nhiều lần hoặc thử nhập 4869 trong Secret Room.</p>
+    <div class="footer-bottom"><span>© 2026 THU HƯƠNG</span><span>V4 · MADE WITH ♡</span></div>
+  </footer>
+
+  <!-- Floating control center -->
+  <aside class="control-panel" id="controlPanel">
+    <div class="control-head"><div><small>MY WORLD</small><h3>Control Center</h3></div><button id="closeControl">×</button></div>
+
+    <div class="control-group"><label>Theme</label><div class="theme-row">
+      <button data-theme="cherry">🌸</button><button data-theme="lavender">💜</button><button data-theme="babyblue">🩵</button><button data-theme="matcha">🍵</button><button data-theme="night">🌙</button>
+    </div></div>
+
+    <div class="control-group"><label>Weather FX</label><select id="weatherSelect"><option value="none">Không hiệu ứng</option><option value="petal">Hoa rơi 🌸</option><option value="rain">Mưa 🌧</option><option value="snow">Tuyết ❄</option><option value="stars">Sao ✦</option></select></div>
+
+    <div class="control-group"><label>Cursor</label><select id="cursorSelect"><option value="sparkle">✦ Sparkle</option><option value="heart">♡ Heart</option><option value="bow">୨୧ Bow</option><option value="flower">✿ Flower</option><option value="off">Tắt</option></select></div>
+
+    <div class="control-row"><span>Âm thanh</span><button id="soundToggle">🔊</button></div>
+    <div class="control-row"><span>Day / Night Auto</span><button id="autoThemeToggle">ON</button></div>
+    <div class="control-row"><span>Love Points</span><b>♡ <span id="controlPoints">0</span></b></div>
+    <button class="secret-entry" id="secretRoomBtn">🔐 Secret Room</button>
+  </aside>
+
+  <button class="back-top" id="backTop">↑</button>
+
+  <!-- Generic modal -->
+  <div class="modal" id="modal">
+    <div class="modal-card" id="modalCard">
+      <button class="modal-close" id="modalClose">×</button>
+      <div id="modalContent"></div>
     </div>
+  </div>
 
-
-
-    <!-- TOAST -->
-
-    <div class="toast"
-         id="toast">
-
-        ♡ Xong rồi nè!
-
-    </div>
-
-
-    <script src="script.js"></script>
-
+  <div class="toast" id="toast">Xong rồi nè ♡</div>
+  <script src="script.js"></script>
 </body>
-
 </html>
